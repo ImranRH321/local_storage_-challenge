@@ -27,19 +27,42 @@ localStorage.setItem("person", JSON.stringify(person));
 
 // ======================
 // level 2 challenge //
-// ========================
-const incrementValue = () => {
-  const p = document.getElementById("value");
-  const textValue = parseInt(p.innerText) + 1;
-  localStorage.setItem("id", JSON.stringify(textValue));
-  console.log(textValue);
-  p.innerText = textValue;
-};
 
+/* 
+let count = localStorage.getItem("id");
+if (count === null) {
+  count = 0;
+  localStorage.setItem("id", JSON.stringify(count));
+}
+const p = document.getElementById("fliedText");
+
+const incrementValue = () => {
+  count++;
+  localStorage.setItem("id", JSON.stringify(count));
+  p.innerText = parseInt(count);
+};
 const displayDataValueReload = () => {
-  const p = document.getElementById("value");
-  const getD = localStorage.getItem("id");
-  //    console.log(p, typeof getD);
-  p.innerText = JSON.parse(getD);
+  p.innerText = count;
 };
 displayDataValueReload();
+ */
+
+let getValue = localStorage.getItem("id");
+if (getValue === null) {
+  getValue = 0;
+  localStorage.setItem("id", JSON.stringify(getValue));
+}
+const p = document.getElementById("fliedText");
+const incrementValue = () => {
+  const value = parseInt(p.innerText) + 1;
+  p.innerText = value;
+  localStorage.setItem("id", JSON.stringify(value));
+};
+const loadData = () => {
+  const data = localStorage.getItem("id");
+  p.innerText = getValue;
+};
+loadData();
+// ***********************
+
+
