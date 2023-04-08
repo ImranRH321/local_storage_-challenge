@@ -131,12 +131,12 @@ document.getElementById("reset_btn").addEventListener("click", function () {
 });
 // challenge Level 4  // ***************;
 // Common Code // *
-
+const nameFlied = document.getElementById("nameFlied");
+const emailFlied = document.getElementById("emailFlied");
+const messageFlied = document.getElementById("messageFlied");
+//
 document.getElementById("sendButton").addEventListener("click", () => {
   // debugger;
-  const nameFlied = document.getElementById("nameFlied");
-  const emailFlied = document.getElementById("emailFlied");
-  const messageFlied = document.getElementById("messageFlied");
   if (!nameFlied.value) {
     alert("name is must");
     return;
@@ -160,16 +160,21 @@ document.getElementById("sendButton").addEventListener("click", () => {
   emailFlied.value = "";
   messageFlied.value = "";
 });
-
+// display data // *
 const getData = () => {
   const stored = localStorage.getItem("user");
   const data = JSON.parse(stored);
-  // console.log(data); 
-  const nameFlied = document.getElementById("nameFlied");
-  const emailFlied = document.getElementById("emailFlied");
-  const messageFlied = document.getElementById("messageFlied");
   nameFlied.value = data.name;
   emailFlied.value = data.email;
   messageFlied.value = data.message;
 };
 getData();
+
+// remove data localStorage /
+document.getElementById("reset_all_btn").addEventListener("click", () => {
+  alert("aRe You deleted");
+  localStorage.removeItem("user");
+  nameFlied.value = "";
+  emailFlied.value = "";
+  messageFlied.value = "";
+});
