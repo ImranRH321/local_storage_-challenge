@@ -65,22 +65,111 @@ const loadData = () => {
 loadData();
 // ***********************
 
-// challenges 3 - Level 
+// challenges 3 - Level
 // ==========================
 // input value set localStorage key value pair
 // problem 1
-// **************************************** 
+// ****************************************
 
+// common set value
+function commonSet(tag, key) {
+  const nameFlied = document.getElementById(tag);
+  const nameFliedValue = nameFlied.value;
+  console.log("key", key);
+  localStorage.setItem(key, JSON.stringify(nameFliedValue));
+  nameFlied.value = "";
+}
+
+// delted button localStorage
+function deletedLocalStoreData(key) {
+  console.log("key", key);
+  localStorage.removeItem(key);
+}
+
+// ******* problem 1 **********
 // name save //
 document.getElementById("sendName_btn").addEventListener("click", () => {
-  alert("btn click");
-  const inpText = document.getElementById("name");
-  const inputValue = inpText.value;
-  localStorage.setItem("sName", JSON.stringify(inputValue));
-  inpText.value = "";
+  commonSet("name", "userName");
 });
 // name Delete //
 document.getElementById("deletedName_btn").addEventListener("click", () => {
-  alert("Are you Sure Delete");
-  localStorage.removeItem("sName");
+  deletedLocalStoreData("userName");
 });
+// ******* problem 2 **********
+// email save //
+document.getElementById("sendEmail_btn").addEventListener("click", () => {
+  commonSet("email", "email");
+});
+// Email Delete //
+document.getElementById("deletedEmail_btn").addEventListener("click", () => {
+  deletedLocalStoreData("email");
+});
+
+// problem 3 Message
+// ****************************************
+// email save //
+document.getElementById("sendMessages_btn").addEventListener("click", () => {
+  commonSet("textFlied", "messages");
+});
+// Email Delete //
+document.getElementById("deleteMessage_btn").addEventListener("click", () => {
+  deletedLocalStoreData("messages");
+});
+// ***********************
+
+// problem 4 /*************** */
+// reset_btn
+document.getElementById("reset_btn").addEventListener("click", function () {
+  const trues = confirm("Are you sure deleted ?");
+  if (trues) {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("email");
+    localStorage.removeItem("messages");
+  } else {
+    alert("oke no deleted");
+  }
+});
+// challenge Level 4  // ***************;
+// Common Code // *
+
+document.getElementById("sendButton").addEventListener("click", () => {
+  // debugger;
+  const nameFlied = document.getElementById("nameFlied");
+  const emailFlied = document.getElementById("emailFlied");
+  const messageFlied = document.getElementById("messageFlied");
+  if (!nameFlied.value) {
+    alert("name is must");
+    return;
+  }
+  if (!emailFlied.value) {
+    alert("email is must");
+    return;
+  }
+  if (!messageFlied.value) {
+    alert("message is must");
+    return;
+  }
+  const object = {
+    name: nameFlied.value,
+    email: emailFlied.value,
+    message: messageFlied.value,
+  };
+  console.log(object);
+  localStorage.setItem("user", JSON.stringify(object));
+  nameFlied.value = "";
+  emailFlied.value = "";
+  messageFlied.value = "";
+});
+
+const getData = () => {
+  const stored = localStorage.getItem("user");
+  const data = JSON.parse(stored);
+  // console.log(data); 
+  const nameFlied = document.getElementById("nameFlied");
+  const emailFlied = document.getElementById("emailFlied");
+  const messageFlied = document.getElementById("messageFlied");
+  nameFlied.value = data.name;
+  emailFlied.value = data.email;
+  messageFlied.value = data.message;
+};
+getData();

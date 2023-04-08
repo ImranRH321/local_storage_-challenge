@@ -20,7 +20,7 @@
         text-align: center;
       }
       .customBg {
-        background-color: rgba(22, 37, 18, 0.84);
+        background-color: #3f51b5;
       }
     </style>
   </head>
@@ -40,7 +40,7 @@
     <section class="level-3 customBg text-white p-3 py-5">
       <h1 class="text-center">Please Contact me</h1>
       <div class="row">
-        <div class="col-12 col-md-6  p-5">
+        <div class="col-12 col-md-6 p-5">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input
@@ -55,6 +55,7 @@
             <input
               id="email"
               type="email"
+              required
               class="form-control"
               placeholder="name@example.com"
             />
@@ -115,6 +116,65 @@
             >
               Send Message
             </button>
+          </div>
+        </div>
+        <!-- reset btn -->
+        <button
+          id="reset_btn"
+          type="button"
+          class="btn btn-success w-25 ms-5 mt-0 pt-0"
+        >
+          Reset
+        </button>
+      </div>
+    </section>
+
+    <!-- challenge 4  -->
+    <section class="level-3 bg-info text-white p-3 py-5">
+      <h1 class="text-center">Please Contact me</h1>
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto p-5">
+          <!-- form container but div convert  -->
+          <div id="form-tag">
+            <div class="mb-3">
+              <label for="nameFlied" class="form-label">Name</label>
+              <input
+                id="nameFlied"
+                type="text"
+                class="form-control"
+                placeholder="please name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="emailFlied" class="form-label">Email</label>
+              <input
+                id="emailFlied"
+                type="email"
+                class="form-control"
+                placeholder="email here"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="messageFlied" class="form-label">Messages</label>
+              <textarea id="messageFlied"  placeholder="Message for box me" class="form-control" rows="3"></textarea>
+            </div>
+            <!-- reset btn -->
+            <div class="grope mt-4">
+              <button
+                id="sendButton"
+                type="submit"
+                class="btn bg-success fw-bold text-white pt-2 w-25 ms-5 pt-0"
+              >
+                Send
+              </button>
+              <button
+                id="reset_btn"
+                type="button"
+                class="btn bg-danger fw-bold text-white pt-2 w-25 ms-5 pt-0"
+              >
+                Reset
+              </button>
+            </div>
           </div>
         </div>
       </div>
