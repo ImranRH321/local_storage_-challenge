@@ -12,13 +12,15 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-
     <style>
       .deep {
         border: 20px solid slateblue;
         padding: 30px;
         width: 200px;
         text-align: center;
+      }
+      .customBg {
+        background-color: rgba(22, 37, 18, 0.84);
       }
     </style>
   </head>
@@ -35,44 +37,86 @@
     </aside>
 
     <!-- challenge 3  -->
-    <section class="level-3 bg-dark text-white p-3 py-4">
+    <section class="level-3 customBg text-white p-3 py-5">
       <h1 class="text-center">Please Contact me</h1>
       <div class="row">
-        <div class="col-12 col-md-6 border p-5">
+        <div class="col-12 col-md-6  p-5">
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Name</label
-            >
+            <label for="name" class="form-label">Name</label>
             <input
+              id="name"
               type="text"
               class="form-control"
-              id="exampleFormControlInput1"
               placeholder="please name"
             />
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Email</label
-            >
+            <label for="email" class="form-label">Email</label>
             <input
+              id="email"
               type="email"
               class="form-control"
-              id="exampleFormControlInput1"
               placeholder="name@example.com"
             />
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Messages</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
+            <label for="textFlied" class="form-label">Messages</label>
+            <textarea id="textFlied" class="form-control" rows="3"></textarea>
           </div>
         </div>
-        <div class="col-12 col-md-6 border">aa</div>
+        <div class="col-12 col-md-6 pt-5">
+          <!-- 1 -->
+          <div class="d-flex m-4 gap-3">
+            <button
+              id="deletedName_btn"
+              type="button"
+              class="btn btn-danger w-50"
+            >
+              Delete Name
+            </button>
+            <button
+              id="sendName_btn"
+              type="button"
+              class="btn btn-success w-50"
+            >
+              Send Name
+            </button>
+          </div>
+          <!-- 2 -->
+          <div class="d-flex m-4 gap-3 pt-4">
+            <button
+              id="deletedEmail_btn"
+              type="button"
+              class="btn btn-danger w-50"
+            >
+              Delete Name
+            </button>
+            <button
+              id="sendEmail_btn"
+              type="button"
+              class="btn btn-success w-50"
+            >
+              Send Name
+            </button>
+          </div>
+          <!-- 3 -->
+          <div class="d-flex m-4 gap-3 pt-5">
+            <button
+              id="deleteMessage_btn"
+              type="button"
+              class="btn btn-danger w-50"
+            >
+              Delete Name
+            </button>
+            <button
+              id="sendMessages_btn"
+              type="button"
+              class="btn btn-success w-50"
+            >
+              Send Name
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 

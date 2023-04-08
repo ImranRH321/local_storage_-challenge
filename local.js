@@ -65,4 +65,15 @@ const loadData = () => {
 loadData();
 // ***********************
 
+// chalanges 3
+// ==========================
+
+const tag = (id) => {
+  document.getElementById(id);
+};
+
+const nameDelete = tag("deletedName_btn");
+const nameSend = tag("sendName_btn");
+
+console.log(nameDelete, nameSend);
 
