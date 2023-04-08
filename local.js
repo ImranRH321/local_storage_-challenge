@@ -65,15 +65,22 @@ const loadData = () => {
 loadData();
 // ***********************
 
-// chalanges 3
+// challenges 3 - Level 
 // ==========================
+// input value set localStorage key value pair
+// problem 1
+// **************************************** 
 
-const tag = (id) => {
-  document.getElementById(id);
-};
-
-const nameDelete = tag("deletedName_btn");
-const nameSend = tag("sendName_btn");
-
-console.log(nameDelete, nameSend);
-
+// name save //
+document.getElementById("sendName_btn").addEventListener("click", () => {
+  alert("btn click");
+  const inpText = document.getElementById("name");
+  const inputValue = inpText.value;
+  localStorage.setItem("sName", JSON.stringify(inputValue));
+  inpText.value = "";
+});
+// name Delete //
+document.getElementById("deletedName_btn").addEventListener("click", () => {
+  alert("Are you Sure Delete");
+  localStorage.removeItem("sName");
+});
